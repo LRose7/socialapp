@@ -7,8 +7,8 @@ const ProfileCard = () => {
   return (
     <div className="ProfileCard">
       <div className="ProfileImages">
-        <img src={Cover} alt="cover image" />
-        <img src={Profile} alt="profile image" />
+        <img src={Cover} alt="cover" />
+        <img src={Profile} alt="profile" />
       </div>
 
       <div className="ProfileName">
