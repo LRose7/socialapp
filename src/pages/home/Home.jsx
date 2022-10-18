@@ -1,6 +1,7 @@
 import React from 'react';
 import PostSide from '../../components/Postside/PostSide';
 import ProfileSide from '../../components/profileSide/ProfileSide';
+import RightSide from '../../components/RightSide/RightSide';
 import './Home.css';
 
 const home = () => {
@@ -8,7 +9,7 @@ const home = () => {
     <div className="Home">
         <ProfileSide />
         <PostSide />
-        <div className="rightSide">Rightside</div>
+        <RightSide />
     </div>
   )
 }
