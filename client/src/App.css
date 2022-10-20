@@ -48,6 +48,11 @@
   border: 2px solid var(--orange);
 }
 
+.button:disabled {
+  background: silver;
+  pointer-events: none;
+}
+
 /* Hide Scrollbar for Chrome, Safari, and Opera */
 ::-webkit-scrollbar {
   display: none;

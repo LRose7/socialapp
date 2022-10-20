@@ -4,7 +4,7 @@ import ProfileSide from '../../components/profileSide/ProfileSide';
 import RightSide from '../../components/RightSide/RightSide';
 import './Home.css';
 
-const home = () => {
+const Home = () => {
   return (
     <div className="Home">
         <ProfileSide />
@@ -14,4 +14,4 @@ const home = () => {
   )
 }
 
-export default home
+export default Home;
