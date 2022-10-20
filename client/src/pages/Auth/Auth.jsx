@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Auth.css";
-import Logo from "../../img/logo.png";
+import Logo from "../../images/logo.png";
 import { logIn, signUp } from "../../actions/AuthActions";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from 'react-router-dom';

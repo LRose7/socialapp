@@ -6,9 +6,9 @@ require("dotenv").config();
 
 // routes
 const authRoute = require('./routes/auth.js'); 
-// import UserRoute from './routes/UserRoute.js'
-// import PostRoute from './routes/PostRoute.js'
-// import UploadRoute from './routes/UploadRoute.js'
+const userRoute = require('./routes/user.js');
+const postRoute = require('./routes/posts.js');
+const uploadRoute = require('./routes/uploads.js');
 // import ChatRoute from './routes/ChatRoute.js'
 // import MessageRoute from './routes/MessageRoute.js'
 
@@ -16,13 +16,16 @@ const authRoute = require('./routes/auth.js');
 // set up express app
 const app = express(); 
 
+// to serve images inside public folder
+app.use(express.static('public')); 
+app.use('/images', express.static('images'));
+
 // middleware
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
-// to serve images inside public folder
-app.use(express.static('public')); 
-app.use('/images', express.static('images'));
+
+
 
 const PORT = process.env.PORT || 5000;
 
@@ -41,8 +44,8 @@ mongoose.connect(CONNECTION, {
 
 
 app.use('/auth', authRoute);
-// app.use('/user', UserRoute)
-// app.use('/posts', PostRoute)
-// app.use('/upload', UploadRoute)
+app.use('/user', userRoute);
+app.use('/posts', postRoute);
+app.use('/uploads', uploadRoute)
 // app.use('/chat', ChatRoute)
 // app.use('/message', MessageRoute)
