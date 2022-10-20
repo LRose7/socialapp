@@ -1,9 +1,6 @@
 import React, { useState } from "react";
 import "./RightSide.css";
-import Home from "../../images/home.png";
-import Noti from "../../images/noti.png";
-import Comment from "../../images/comment.png";
-import { UilSetting } from "@iconscout/react-unicons";
+import NavIcons from "../NavIcons/NavIcons";
 import TrendCard from "../TrendCard/TrendCard";
 import ShareModal from "../ShareModal/ShareModal";
 
@@ -11,14 +8,13 @@ const RightSide = () => {
   const [modalOpened, setModalOpened] = useState(false);
   return (
     <div className="RightSide">
-      <div className="navIcons">
-        <img src={Home} alt="" />
-        <UilSetting />
-        <img src={Noti} alt="" />
-        <img src={Comment} alt="" />
-      </div>
+      {/* Side Navbar */}
+      <NavIcons />
 
+      {/* Trend Card */}
       <TrendCard />
+
+      {/* Share Button */}
       <button className="button r-button" onClick={() => setModalOpened(true)}>
         Share
       </button>

@@ -1,6 +1,5 @@
 import React, { useState, useRef } from "react";
 import "./PostShare.css";
-import ProfileImage from "../../images/profileImg.jpg";
 import { UilScenery } from "@iconscout/react-unicons";
 import { UilPlayCircle } from "@iconscout/react-unicons";
 import { UilLocationPoint } from "@iconscout/react-unicons";
@@ -13,7 +12,7 @@ const PostShare = () => {
   const dispatch = useDispatch();
   const [image, setImage] = useState(null);
   const desc = useRef();
-  const {user} = useSelector((state) => state.authReducer.authData);
+  const { user } = useSelector((state) => state.authReducer.authData);
   const loading = useSelector((state) => state.postReducer.uploading);
   const serverPublic = process.env.REACT_APP_PUBLIC_FOLDER;
 
@@ -25,7 +24,7 @@ const PostShare = () => {
     }
   };
 
-  const imageRef = useRef ();
+  const imageRef = useRef();
 
   // Handle Post upload
   const handleUpload = async (e) => {
@@ -34,10 +33,10 @@ const PostShare = () => {
     // Post data
     const newPost = {
       userId: user._id,
-      desc: desc.current.value
+      desc: desc.current.value,
     };
     // If there is an image with a post
-    if(image) {
+    if (image) {
       const data = new FormData();
       const filename = Date.now() + image.name;
       data.append("name", filename);
@@ -62,20 +61,16 @@ const PostShare = () => {
 
   return (
     <div className="PostShare">
-      <img src={
-        user.profilePicture
-        ? serverPublic + user.profilePicture
-        : ProfileImage        
-        } 
-        alt="" 
+      <img
+        src={
+          user.profilePicture
+            ? serverPublic + user.profilePicture
+            : serverPublic + "defaultProfile.png"
+        }
+        alt=""
       />
       <div>
-        <input 
-        type="text" 
-        placeholder="What's happening" 
-        ref={desc}
-        required
-        />
+        <input type="text" placeholder="What's happening" ref={desc} required />
         <div className="postOptions">
           <div
             className="option"
@@ -98,30 +93,28 @@ const PostShare = () => {
             Schedule
           </div>
 
-          <button 
-          className="button ps-button"
-          onClick={handleUpload}
-          disabled={loading}
+          <button
+            className="button ps-button"
+            onClick={handleUpload}
+            disabled={loading}
           >
             {loading ? "uploading" : "Share"}
           </button>
 
           <div style={{ display: "none" }}>
-            <input
-              type="file"
-              ref={imageRef}
-              onChange={onImageChange}
-            />
+            <input type="file" ref={imageRef} onChange={onImageChange} />
           </div>
         </div>
 
         {image && (
-            <div className="previewImage">
-                <UilTimes style={{color: "var(--orange)"}} onClick={()=>setImage(null)}/>
-                <img src={URL.createObjectURL(image)} alt="preview" />
-            </div>
+          <div className="previewImage">
+            <UilTimes
+              style={{ color: "var(--orange)" }}
+              onClick={() => setImage(null)}
+            />
+            <img src={URL.createObjectURL(image)} alt="preview" />
+          </div>
         )}
-
       </div>
     </div>
   );

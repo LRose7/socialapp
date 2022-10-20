@@ -19,10 +19,10 @@ const ProfileModal = ({ modalOpened, setModalOpened, data }) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const onImageChange = (event) => {
-    if (event.target.files && event.target.files[0]) {
-      let img = event.target.files[0];
-      event.target.name === "profileImage"
+  const onImageChange = (e) => {
+    if (e.target.files && e.target.files[0]) {
+      let img = e.target.files[0];
+      e.target.name === "profileImage"
         ? setProfileImage(img)
         : setCoverImage(img);
     }
@@ -80,7 +80,7 @@ const ProfileModal = ({ modalOpened, setModalOpened, data }) => {
             type="text"
             className="infoInput"
             name="FirstName"
-            placeholder="First Name"
+            placeholder={user.firstname}
             value={formData.firstname}
             onChange={handleChange}
           />
@@ -117,7 +117,7 @@ const ProfileModal = ({ modalOpened, setModalOpened, data }) => {
           <input
             type="text"
             className="infoInput"
-            name="Country"
+            name="country"
             placeholder="Country"
             value={formData.country}
             onChange={handleChange}
@@ -139,7 +139,7 @@ const ProfileModal = ({ modalOpened, setModalOpened, data }) => {
           <input type="file" name="coverImage" onChange={onImageChange}/>
         </div>
 
-        <button className="button infoButton" type="submit">
+        <button className="button infoButton" type="submit" onClick={handleSubmit}>
           Update
         </button>
       </form>
