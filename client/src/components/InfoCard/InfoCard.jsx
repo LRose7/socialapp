@@ -60,21 +60,21 @@ const InfoCard = () => {
 
       <div className="info">
         <span>
-          <b>Status </b>
+          <b>Status: </b>
         </span>
         <span>{profileUser.relationship}</span>
       </div>
 
       <div className="info">
         <span>
-          <b>Lives In</b>
+          <b>Lives In: </b>
         </span>
         <span>{profileUser.livesIn}</span>
       </div>
 
       <div className="info">
         <span>
-          <b>Works at </b>
+          <b>Works at: </b>
         </span>
         <span>{profileUser.worksAt}</span>
       </div>

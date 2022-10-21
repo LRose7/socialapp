@@ -125,7 +125,7 @@ const ProfileModal = ({ modalOpened, setModalOpened, data }) => {
           <input
             type="text"
             className="infoInput"
-            name="relationshipStatus"
+            name="relationship"
             placeholder="Relationship Status"
             value={formData.relationship}
             onChange={handleChange}
