@@ -80,7 +80,7 @@ const ProfileModal = ({ modalOpened, setModalOpened, data }) => {
             type="text"
             className="infoInput"
             name="FirstName"
-            placeholder={user.firstname}
+            placeholder="First Name"
             value={formData.firstname}
             onChange={handleChange}
           />

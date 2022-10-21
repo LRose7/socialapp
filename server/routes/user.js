@@ -30,11 +30,11 @@ router.get("/:id", async (req, res) => {
 
 router.get("/", async (req, res) => {
   try {
-    const users = await User.find();
-    // users = users.map((user) => {
-    //     const { password, ...otherDetails } = user._doc;
-    //     return otherDetails
-    // });
+    let users = await User.find();
+    users = users.map((user) => {
+        const { password, ...otherDetails } = user._doc;
+        return otherDetails;
+    })
     res.status(200).json(users);
   } catch (error) {
     res.status(500).json(error);
