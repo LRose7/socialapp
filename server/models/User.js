@@ -4,31 +4,44 @@ const UserSchema = new mongoose.Schema(
   {
     username: {
       type: String,
+      unique: true,
+      trim: true,
+      maxLength: 16,
+      required: true,
+    },
+    email: {
+      type: String,
+      trim: true,
+      unique: true,
       required: true,
     },
     password: {
       type: String,
       required: true,
     },
-    firstname: {
+    displayname: {
       type: String,
-      required: true,
+      trim: true,
+      maxLength: 16,
     },
-    lastname: {
+    location: {
       type: String,
-      required: true,
+      default: '',
+    },
+    website: {
+      type: String,
+      default: '',
+    },
+    bio: {
+      type: String,
+      maxLength: 300,
     },
     isAdmin: {
       type: Boolean,
       default: false,
     },
-   profilePicture: String,
+    profilePicture: String,
     coverPicture: String,
-    about: String,
-    livesIn: String,
-    worksAt: String,
-    relationship: String,
-    country: String,
     followers: [],
     following: [],
   },

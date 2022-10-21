@@ -60,23 +60,29 @@ const InfoCard = () => {
 
       <div className="info">
         <span>
-          <b>Status: </b>
+          <b>Display Name: </b>
         </span>
-        <span>{profileUser.relationship}</span>
+        <span>{profileUser.displayname}</span>
       </div>
 
       <div className="info">
         <span>
-          <b>Lives In: </b>
+          <b>Location: </b>
         </span>
-        <span>{profileUser.livesIn}</span>
+        <span>{profileUser.location}</span>
       </div>
 
       <div className="info">
         <span>
-          <b>Works at: </b>
+          <b>Website: </b>
         </span>
-        <span>{profileUser.worksAt}</span>
+        <span>{profileUser.website}</span>
+      </div>
+      <div className="info">
+        <span>
+          <b>Bio: </b>
+        </span>
+        <span>{profileUser.bio}</span>
       </div>
 
       <button className="button logout-button" onClick={handleLogOut}>Logout</button>

@@ -20,7 +20,7 @@ const FollowersCard = ({ location }) => {
 
   return (
     <div className="FollowersCard">
-      <h3>People You may know</h3>
+      <h3>People To Follow</h3>
 
       {persons.map((person, id) => {
         if (person._id !== user._id) return <User person={person} key={id} />;

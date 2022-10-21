@@ -79,17 +79,9 @@ const ProfileModal = ({ modalOpened, setModalOpened, data }) => {
           <input
             type="text"
             className="infoInput"
-            name="FirstName"
-            placeholder="First Name"
-            value={formData.firstname}
-            onChange={handleChange}
-          />
-          <input
-            type="text"
-            className="infoInput"
-            name="LastName"
-            placeholder="Last Name"
-            value={formData.lastname}
+            name="displayname"
+            placeholder="Display Name"
+            value={formData.displayname}
             onChange={handleChange}
           />
         </div>
@@ -97,9 +89,9 @@ const ProfileModal = ({ modalOpened, setModalOpened, data }) => {
           <input
             type="text"
             className="infoInput"
-            name="worksAt"
-            placeholder="Works at"
-            value={formData.worksAt}
+            name="location"
+            placeholder="Location"
+            value={formData.location}
             onChange={handleChange}
           />
         </div>
@@ -107,31 +99,24 @@ const ProfileModal = ({ modalOpened, setModalOpened, data }) => {
           <input
             type="text"
             className="infoInput"
-            name="livesIn"
-            placeholder="Lives In"
-            value={formData.livesIn}
+            name="website"
+            placeholder="Website"
+            value={formData.website}
             onChange={handleChange}
           />
         </div>
         <div>
-          <input
-            type="text"
-            className="infoInput"
-            name="country"
-            placeholder="Country"
-            value={formData.country}
-            onChange={handleChange}
-          />
-          <input
-            type="text"
-            className="infoInput"
-            name="relationship"
-            placeholder="Relationship Status"
-            value={formData.relationship}
-            onChange={handleChange}
-          />
+          <textarea 
+          name="bio"  
+          cols="30" 
+          rows="10"
+          className="infoInput"
+          placeholder="Bio"
+          value={formData.bio}
+          onChange={handleChange}
+          >
+          </textarea>
         </div>
-
         <div>
           Profile Image
           <input type="file" name="profileImage" onChange={onImageChange} />

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./RightSide.css";
 import NavIcons from "../NavIcons/NavIcons";
-import TrendCard from "../TrendCard/TrendCard";
+// import TrendCard from "../TrendCard/TrendCard";
 import ShareModal from "../ShareModal/ShareModal";
 
 const RightSide = () => {
@@ -12,7 +12,7 @@ const RightSide = () => {
       <NavIcons />
 
       {/* Trend Card */}
-      <TrendCard />
+      {/* <TrendCard /> */}
 
       {/* Share Button */}
       <button className="button r-button" onClick={() => setModalOpened(true)}>

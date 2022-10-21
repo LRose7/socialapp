@@ -7,8 +7,7 @@ import { useNavigate } from 'react-router-dom';
 
 const Auth = () => {
   const initialState = {
-    firstname: "", 
-    lastname: "", 
+    email: "",
     username: "", 
     password: "", 
     confirmpass: ""
@@ -68,26 +67,16 @@ const Auth = () => {
         {isSignUp && (
         <div>
           <input
-            type="text"
-            placeholder="First Name"
+            type="email"
+            placeholder="Email"
             className="infoInput"
-            name="firstname"
+            name="email"
             onChange={handleChange}
-            value={data.firstname}
-            required
-          />
-          <input
-            type="text"
-            placeholder="Last Name"
-            className="infoInput"
-            name="lastname"
-            onChange={handleChange}
-            value={data.lastname}
+            value={data.email}
             required
           />
         </div>
         )}
-
         <div>
           <input
             type="text"

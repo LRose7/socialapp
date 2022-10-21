@@ -5,6 +5,10 @@ const jwt = require("jsonwebtoken");
 // Load User model
 const User = require("../models/User");
 
+router.get('/', (req, res) => {
+  res.send('Auth Route');
+});
+
 // @route   POST /auth/register
 // @desc    Register a user
 // @access  Public

@@ -29,7 +29,7 @@ const User = ({ person }) => {
           className="followerImg"
         />
         <div className="name">
-          <span>{person.firstname} {person.lastname}</span>
+          <span>{person.displayname}</span>
           <span>@{person.username}</span>
         </div>
       </div>
