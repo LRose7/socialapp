@@ -19,3 +19,20 @@
     align-items: flex-start;
     gap: 1.5rem;
 }
+
+/* .PostUser > img {
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    margin-right: 5px;
+} */
+
+/* .PostUser {
+    display: flex;  
+}
+
+.PostUser > div {
+    display: flex;  
+    flex-direction: column;
+    margin-top: 2px;
+} */

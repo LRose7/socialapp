@@ -6,6 +6,7 @@ import Heart from '../../images/like.png';
 import NotLike from '../../images/notlike.png';
 import { likePost } from "../../api/PostRequests";
 import { useSelector } from "react-redux";
+const serverPublic = process.env.REACT_APP_PUBLIC_FOLDER;
 
 const Post = ({ data }) => {
   const { user } = useSelector((state) => state.authReducer.authData);
@@ -21,6 +22,20 @@ const Post = ({ data }) => {
 
   return (
     <div className="Post">
+      {/* <div className="PostUser">
+      <img
+        src={
+          user.profilePicture
+            ? serverPublic + user.profilePicture
+            : serverPublic + "defaultProfile.png"
+        }
+        alt=""
+      />
+      <div>
+       <b>{user.firstname} {user.lastname}</b>
+       @{user.username}
+      </div>
+      </div> */}
         <img src={data.image ? process.env.REACT_APP_PUBLIC_FOLDER + data.image : ""} alt="" />
         <div className="detail">
             <span><b>{data.name}</b></span>

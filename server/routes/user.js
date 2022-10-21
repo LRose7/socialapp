@@ -44,7 +44,7 @@ router.get("/", async (req, res) => {
 // @route   Put /user/:id
 // @desc    Update a user
 // @access  Private
-router.put("/:id", async (req, res) => {
+router.put("/:id", authMiddleWare, async (req, res) => {
   const id = req.params.id;
   const { _id, currentUserAdmin, password } = req.body;
 
@@ -78,7 +78,7 @@ router.put("/:id", async (req, res) => {
 // @route   DELETE /user/:id
 // @desc    Delete a user
 // @access  Private
-router.delete("/:id", async (req, res) => {
+router.delete("/:id", authMiddleWare, async (req, res) => {
   const id = req.params.id;
   const { currentUserId, currentUserAdmin } = req.body;
   if (currentUserId == id || currentUserAdmin) {
@@ -96,7 +96,7 @@ router.delete("/:id", async (req, res) => {
 // @route   PUT /user/:id/follow
 // @desc    follow a user
 // @access  Private
-router.put("/:id/follow", async (req, res) => {
+router.put("/:id/follow", authMiddleWare, async (req, res) => {
   const id = req.params.id;
   const { _id } = req.body;
   console.log(id, _id);
@@ -122,7 +122,7 @@ router.put("/:id/follow", async (req, res) => {
 // @route   PUT /user/:id/unfollow
 // @desc    unfollow a user
 // @access  Private
-router.put("/:id/unfollow", async (req, res) => {
+router.put("/:id/unfollow", authMiddleWare, async (req, res) => {
   const id = req.params.id;
   const { _id } = req.body;
 
