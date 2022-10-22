@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Auth.css";
 import Logo from "../../images/logo.png";
-import { logIn, signUp } from "../../redux/actions/AuthActions";
+import { login, signup } from "../../redux/actions/AuthActions";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from 'react-router-dom';
 
@@ -38,10 +38,10 @@ const Auth = () => {
     e.preventDefault();
     if(isSignUp) {
       data.password === data.confirmpass 
-      ? dispatch(signUp(data, navigate)) 
+      ? dispatch(signup(data, navigate)) 
       : setConfirmPass(false);
     } else {
-      dispatch(logIn(data, navigate));
+      dispatch(login(data, navigate));
     }
   };
 
