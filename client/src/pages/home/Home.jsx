@@ -1,14 +1,14 @@
 import React from 'react';
-import PostSide from '../../components/Postside/PostSide';
-import ProfileSide from '../../components/profileSide/ProfileSide';
+import Center from '../../components/Center/Center';
+import LeftSide from '../../components/LeftSide/LeftSide';
 import RightSide from '../../components/RightSide/RightSide';
 import './Home.css';
 
 const Home = () => {
   return (
     <div className="Home">
-        <ProfileSide />
-        <PostSide />
+        <LeftSide />
+        <Center />
         <RightSide />
     </div>
   )

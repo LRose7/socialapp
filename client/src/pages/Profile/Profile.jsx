@@ -1,5 +1,5 @@
 import React from "react";
-import PostSide from "../../components/Postside/PostSide";
+import Center from "../../components/Center/Center";
 import ProfileCard from "../../components/ProfileCard/ProfileCard";
 import ProfileLeft from "../../components/ProfileLeft/ProfileLeft";
 import RightSide from "../../components/RightSide/RightSide";
@@ -12,7 +12,7 @@ const Profile = () => {
 
       <div className="Profile-center">
         <ProfileCard location="profilePage" />
-        <PostSide />
+        <Center />
       </div>
 
       <RightSide />
