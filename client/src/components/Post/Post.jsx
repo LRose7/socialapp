@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Post.css';
 import Comment from '../../images/comment.png';
 import Share from '../../images/share.png';
@@ -6,10 +6,11 @@ import Heart from '../../images/like.png';
 import NotLike from '../../images/notlike.png';
 import { likePost } from "../../api/PostRequests";
 import { useSelector } from "react-redux";
+import axios from 'axios';
 const serverPublic = process.env.REACT_APP_PUBLIC_FOLDER;
 
 const Post = ({ data }) => {
-  const { user } = useSelector((state) => state.authReducer.authData);
+  const { user, setUser } = useSelector((state) => state.authReducer.authData);
   const [liked, setLiked] = useState(data.likes.includes(user._id));
   const [likes, setLikes] = useState(data.likes.length)
 
@@ -19,6 +20,16 @@ const Post = ({ data }) => {
     setLiked((prev) => !prev);
     liked? setLikes((prev)=>prev-1): setLikes((prev)=>prev+1)
   };
+
+  // useEffect(() => {
+  //   try {
+  //     const fetchUser = aysnc () => {
+  //       const res = await 
+  //     }
+  //   } catch (e) {
+      
+  //   }
+  // })
 
   return (
     <div className="Post">

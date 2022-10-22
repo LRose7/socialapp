@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { Modal, useMantineTheme } from "@mantine/core";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { uploadImage } from "../../actions/UploadAction";
-import { updateUser } from "../../actions/UserAction";
+import { uploadImage } from "../../redux/actions/UploadAction";
+import { updateUser } from "../../redux/actions/UserAction";
 
 const ProfileModal = ({ modalOpened, setModalOpened, data }) => {
   const theme = useMantineTheme();
