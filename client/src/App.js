@@ -5,6 +5,7 @@ import Home from "./pages/home/Home";
 import Profile from "./pages/Profile/Profile";
 import { useSelector } from "react-redux";
 import { Header } from "@mantine/core";
+import Chat from "./pages/Chat/Chat";
 
 function App() {
   const user = useSelector((state) => state.authReducer.authData);
@@ -37,6 +38,10 @@ function App() {
               <p>There's nothing here!</p>
             </main>
           }
+        />
+        <Route 
+        path="/chat"
+        element={user ? <Chat /> : <Navigate to="../auth" />}
         />
       </Routes>
     </div>

@@ -9,9 +9,8 @@ const authRoute = require('./routes/auth.js');
 const userRoute = require('./routes/user.js');
 const postRoute = require('./routes/posts.js');
 const uploadRoute = require('./routes/uploads.js');
-// import ChatRoute from './routes/ChatRoute.js'
-// import MessageRoute from './routes/MessageRoute.js'
-
+const chatRoute = require('./routes/chat.js');
+const messageRoute = require('./routes/message.js');
 
 // set up express app
 const app = express(); 
@@ -46,6 +45,6 @@ mongoose.connect(CONNECTION, {
 app.use('/auth', authRoute);
 app.use('/user', userRoute);
 app.use('/posts', postRoute);
-app.use('/uploads', uploadRoute)
-// app.use('/chat', ChatRoute)
-// app.use('/message', MessageRoute)
+app.use('/uploads', uploadRoute);
+app.use('/chat', chatRoute);
+app.use('/message', messageRoute);
