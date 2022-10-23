@@ -4,6 +4,7 @@ import Auth from "./pages/Auth/Auth";
 import Home from "./pages/home/Home";
 import Profile from "./pages/Profile/Profile";
 import { useSelector } from "react-redux";
+import { Header } from "@mantine/core";
 
 function App() {
   const user = useSelector((state) => state.authReducer.authData);
@@ -11,6 +12,7 @@ function App() {
     <div className="App">
       <div className="blur" style={{ top: "-18%", right: "0" }}></div>
       <div className="blur" style={{ top: "36%", left: "-8rem" }}></div>
+      <Header />
       <Routes>
         <Route
           path="/"
