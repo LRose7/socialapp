@@ -46,6 +46,7 @@
 }
 
 .timestamp {
-    margin-left: 55px;
   font-size: 11px;
+  margin-left: 50px;
+  color: white;
 }

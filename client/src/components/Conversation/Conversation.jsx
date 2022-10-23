@@ -10,7 +10,7 @@ const Conversation = ({ data, currentUser, online }) => {
 
   useEffect(() => {
     const userId = data.members.find((id) => id !== currentUser);
-     const getUserData = async () => {
+    const getUserData = async () => {
       try {
         const { data } = await getUser(userId);
         setUserData(data);
@@ -34,12 +34,12 @@ const Conversation = ({ data, currentUser, online }) => {
                 : publicFolder + "defaultProfile.png"
             }
             alt="Profile"
-            className="followerImage"
+            className="followerImg"
             style={{ width: "50px", height: "50px" }}
           />
           <div className="name" style={{ fontSize: "0.8rem" }}>
             <span>
-              {userData?.displayname} {userData?.username}
+              {userData?.displayname} <br /> @{userData?.username}
             </span>
             <span style={{ color: online ? "#51e200" : "" }}>
               {online ? "Online" : "Offline"}

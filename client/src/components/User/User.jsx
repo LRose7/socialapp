@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { followUser, unfollowUser } from "../../redux/actions/UserAction";
+import { Link } from "react-router-dom";
 
 const User = ({ person }) => {
   const publicFolder = process.env.REACT_APP_PUBLIC_FOLDER;
   const { user } = useSelector((state) => state.authReducer.authData);
-  const dispatch = useDispatch()
-  
+  const dispatch = useDispatch();
+
   const [following, setFollowing] = useState(
     person.followers.includes(user._id)
   );

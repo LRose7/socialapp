@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Post.css";
 import Comment from "../../images/comment.png";
 import Share from "../../images/share.png";
@@ -6,10 +6,11 @@ import Heart from "../../images/like.png";
 import NotLike from "../../images/notlike.png";
 import { likePost } from "../../redux/api/PostRequests";
 import { useSelector } from "react-redux";
-import * as timeago from "timeago.js";
+import { format } from "timeago.js";
 
 const Post = ({ data }) => {
   const { user } = useSelector((state) => state.authReducer.authData);
+
   const [liked, setLiked] = useState(data.likes.includes(user._id));
   const [likes, setLikes] = useState(data.likes.length);
   const publicFolder = process.env.REACT_APP_PUBLIC_FOLDER;
@@ -32,11 +33,10 @@ const Post = ({ data }) => {
           alt="profileImage"
         />
         <div className="name">
-          <b>{user.displayname}</b> @{user.username} 
+          <b>{user.displayname}</b> @{user.username}
         </div>
       </div>
-      <span className="timestamp">{timeago.format()}</span>
-
+      <span className="timestamp">{format(data.createdAt)}</span>
       <img
         src={data.image ? process.env.REACT_APP_PUBLIC_FOLDER + data.image : ""}
         alt=""

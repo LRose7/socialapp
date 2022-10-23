@@ -12,19 +12,19 @@ const Posts = () => {
   let { posts, loading } = useSelector((state) => state.postReducer);
 
   useEffect(() => {
-    dispatch(getTimelinePosts(user._id))
-  },[]);
-  if(!posts) return 'No Posts';
-  if(params.id) posts = posts.filter((post)=> post.userId===params.id);
+    dispatch(getTimelinePosts(user._id));
+  }, []);
+  if (!posts) return "No Posts";
+  if (params.id) posts = posts.filter((post) => post.userId === params.id);
 
   return (
-  <div className="Posts">
-    {loading
-    ? "fetching posts...."
-    : posts.map((post, id)=>{
-        return <Post data={post} key={id} />
-    })}
-  </div>
+    <div className="Posts">
+      {loading
+        ? "fetching posts...."
+        : posts.map((post, id) => {
+            return <Post data={post} key={id} />;
+          })}
+    </div>
   );
 };
 

@@ -106,12 +106,12 @@ useEffect(()=> {
                           "defaultProfile.png"
                     }
                     alt="Profile"
-                    className="followerImage"
+                    className="followerImg"
                     style={{ width: "50px", height: "50px" }}
                   />
                   <div className="name" style={{ fontSize: "0.9rem" }}>
                     <span>
-                      {userData?.displayname} {userData?.username}
+                      {userData?.displayname} <br/> @{userData?.username}
                     </span>
                   </div>
                 </div>
