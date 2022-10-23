@@ -24,10 +24,13 @@
 
 .ProfileImages > img:nth-of-type(2) {
   width: 6rem;
+  height: 5rem;
+  object-fit: cover;
   border-radius: 50%;
   position: absolute;
-  bottom: -3rem;
+  bottom: -3.5rem;
   box-shadow: var(--profileShadow);
+  /* border: solid 2px var(--purple); */
 }
 
 .ProfileName {
@@ -57,40 +60,39 @@
 }
 
 .followStatus > div {
-    display: flex;
-    gap: 1rem;
-    width: 80%;
-    justify-content: space-around;
-    align-items: center;
+  display: flex;
+  gap: 1rem;
+  width: 80%;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .follow {
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  align-items: center;
+  justify-content: center;
 }
 
 .follow > span:nth-of-type(1) {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .follow > span:nth-of-type(2) {
-    color: var(--gray);
-    font-size: 13px;
+  color: var(--gray);
+  font-size: 13px;
 }
 
 .vl {
-    height: 150%;
-    border-left: 2px solid var(--hrColor);
+  height: 150%;
+  border-left: 2px solid var(--hrColor);
 }
 
 .ProfileCard > span {
-    font-weight: bold;
-    color: orange;
-    align-self: center;
-    margin-bottom: 1rem;
-    cursor: pointer;
-
+  font-weight: bold;
+  color: orange;
+  align-self: center;
+  margin-bottom: 1rem;
+  cursor: pointer;
 }

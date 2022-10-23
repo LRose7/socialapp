@@ -5,32 +5,33 @@ const UserSchema = new mongoose.Schema(
     username: {
       type: String,
       unique: true,
-      trim: true,
-      maxLength: 16,
+      min: 3,
+      max: 20,
       required: true,
     },
     email: {
       type: String,
-      trim: true,
+      max: 50,
       unique: true,
       required: true,
     },
     password: {
       type: String,
+      min: 6,
       required: true,
     },
     displayname: {
       type: String,
       trim: true,
-      maxLength: 16,
+      max: 20,
     },
     location: {
       type: String,
-      default: '',
+      default: "",
     },
     website: {
       type: String,
-      default: '',
+      default: "",
     },
     bio: {
       type: String,
@@ -40,10 +41,26 @@ const UserSchema = new mongoose.Schema(
       type: Boolean,
       default: false,
     },
-    profilePicture: String,
-    coverPicture: String,
-    followers: [],
-    following: [],
+    profilePicture: {
+      type: String,
+      default: "",
+    },
+    coverPicture: {
+      type: String,
+      default: "",
+    },
+    followers: {
+      type: Array,
+      default: [],
+    },
+    following: {
+      type: Array,
+      default: [],
+    },
+    date: {
+      type: Date,
+      default: Date.now
+    }
   },
   { timestamps: true }
 );
