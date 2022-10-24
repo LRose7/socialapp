@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Auth.css";
-import Logo from "../../images/logo.png";
+import Logo from "../../images/logo3.PNG";
 import { login, signup } from "../../redux/actions/AuthActions";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from 'react-router-dom';
@@ -53,8 +53,8 @@ const Auth = () => {
         <img src={Logo} alt="" />
 
         <div className="Webname">
-          <h1>ExpressYaself</h1>
-          <h6>A safe place to express yourself to the world.</h6>
+          <h1>Qui-Gon</h1>
+          <h6>A Ghost of a Social Media Platform</h6>
         </div>
       </div>
 

@@ -1,9 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./Post.css";
-import Comment from "../../images/comment.png";
-import Share from "../../images/share.png";
-import Heart from "../../images/like.png";
-import NotLike from "../../images/notlike.png";
+import {
+  Edit,
+  DeleteForever,
+  Comment,
+  Share,
+  Favorite,
+} from "@mui/icons-material";
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import { likePost } from "../../redux/api/PostRequests";
 import { useSelector } from "react-redux";
 import { format } from "timeago.js";
@@ -48,14 +52,19 @@ const Post = ({ data }) => {
         <span> {data.desc}</span>
       </div>
       <div className="postReact">
-        <img
-          src={liked ? Heart : NotLike}
-          alt=""
-          style={{ cursor: "pointer" }}
-          onClick={handleLike}
-        />
-        <img src={Comment} alt="" />
-        <img src={Share} alt="" />
+        {liked ? (
+          <Favorite onClick={handleLike} />
+        ) : (
+          <FavoriteBorderIcon
+            style={{ cursor: "pointer" }}
+            onClick={handleLike}
+          />
+        )}
+
+        <Share style={{ cursor: "pointer" }} />
+        <Comment style={{ cursor: "pointer" }} />
+        <Edit style={{ cursor: "pointer" }} />
+        <DeleteForever style={{ cursor: "pointer" }} />
       </div>
       <span style={{ color: "var(--gray)", fontSize: "12px" }}>
         {likes} likes
