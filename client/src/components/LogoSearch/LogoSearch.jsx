@@ -1,7 +1,7 @@
 import React from "react";
 import "./LogoSearch.css";
 import Logo from "../../images/logo3.PNG";
-import { UilSearch } from "@iconscout/react-unicons";
+import SearchIcon from '@mui/icons-material/Search';
 
 const LogoSearch = () => {
   return (
@@ -10,7 +10,7 @@ const LogoSearch = () => {
       <div className="Search">
         <input type="text" placeholder="#Explore" />
         <div className="s-icon">
-          <UilSearch />
+          <SearchIcon/>
         </div>
       </div>
     </div>

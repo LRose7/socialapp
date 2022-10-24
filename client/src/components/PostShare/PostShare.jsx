@@ -1,9 +1,8 @@
 import React, { useState, useRef } from "react";
 import "./PostShare.css";
-import { UilScenery } from "@iconscout/react-unicons";
-import { UilPlayCircle } from "@iconscout/react-unicons";
+import VideocamIcon from "@mui/icons-material/Videocam";
 import { UilLocationPoint } from "@iconscout/react-unicons";
-import { UilSchedule } from "@iconscout/react-unicons";
+import AddAPhotoIcon from "@mui/icons-material/AddAPhoto";
 import { UilTimes } from "@iconscout/react-unicons";
 import { useDispatch, useSelector } from "react-redux";
 import { uploadImage, uploadPost } from "../../redux/actions/UploadAction.js";
@@ -70,29 +69,20 @@ const PostShare = () => {
         alt=""
       />
       <div>
+        
         <input type="text" placeholder="What's happening" ref={desc} required />
+
         <div className="postOptions">
-          <div
-            className="option"
-            style={{ color: "var(--photo)" }}
-            onClick={() => imageRef.current.click()}
-          >
-            <UilScenery />
-            Photo
-          </div>
-          <div className="option" style={{ color: "var(--video)" }}>
-            <UilPlayCircle />
-            Video
-          </div>
-          <div className="option" style={{ color: "var(--location)" }}>
-            <UilLocationPoint />
-            Location
-          </div>
-          <div className="option" style={{ color: "var(--schedule)" }}>
-            <UilSchedule />
-            Schedule
+          <div className="option">
+            <AddAPhotoIcon
+              style={{ cursor: "pointer", fontSize: "22px" }}
+              onClick={() => imageRef.current.click()}
+            />
           </div>
 
+          <div className="option">
+            <VideocamIcon />
+          </div>
           <button
             className="button ps-button"
             onClick={handleUpload}
@@ -100,22 +90,22 @@ const PostShare = () => {
           >
             {loading ? "uploading" : "Share"}
           </button>
-
-          <div style={{ display: "none" }}>
-            <input type="file" ref={imageRef} onChange={onImageChange} />
-          </div>
         </div>
 
-        {image && (
-          <div className="previewImage">
-            <UilTimes
-              style={{ color: "var(--orange)" }}
-              onClick={() => setImage(null)}
-            />
-            <img src={URL.createObjectURL(image)} alt="preview" />
-          </div>
-        )}
+        <div style={{ display: "none" }}>
+          <input type="file" ref={imageRef} onChange={onImageChange} />
+        </div>
       </div>
+
+      {image && (
+        <div className="previewImage">
+          <UilTimes
+            style={{ color: "var(--orange)" }}
+            onClick={() => setImage(null)}
+          />
+          <img src={URL.createObjectURL(image)} alt="preview" />
+        </div>
+      )}
     </div>
   );
 };
