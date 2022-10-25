@@ -1,9 +1,9 @@
 import React, { useState, useRef } from "react";
 import "./PostShare.css";
 import VideocamIcon from "@mui/icons-material/Videocam";
-import { UilLocationPoint } from "@iconscout/react-unicons";
 import AddAPhotoIcon from "@mui/icons-material/AddAPhoto";
-import { UilTimes } from "@iconscout/react-unicons";
+import CloseIcon from '@mui/icons-material/Close';
+// import { UilTimes } from "@iconscout/react-unicons";
 import { useDispatch, useSelector } from "react-redux";
 import { uploadImage, uploadPost } from "../../redux/actions/UploadAction.js";
 
@@ -99,9 +99,8 @@ const PostShare = () => {
 
       {image && (
         <div className="previewImage">
-          <UilTimes
-            style={{ color: "var(--orange)" }}
-            onClick={() => setImage(null)}
+          <CloseIcon 
+          onClick={() => setImage(null)}
           />
           <img src={URL.createObjectURL(image)} alt="preview" />
         </div>

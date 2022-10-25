@@ -41,16 +41,17 @@ const Post = ({ data }) => {
         </div>
       </div>
       <span className="timestamp">{format(data.createdAt)}</span>
-      <img
-        src={data.image ? process.env.REACT_APP_PUBLIC_FOLDER + data.image : ""}
-        alt=""
-      />
       <div className="detail">
         <span>
           <b>{data.name}</b>
         </span>
         <span> {data.desc}</span>
       </div>
+      <img
+        className="post-img"
+        src={data.image ? process.env.REACT_APP_PUBLIC_FOLDER + data.image : ""}
+        alt=""
+      />
       <div className="postReact">
         {liked ? (
           <Favorite onClick={handleLike} />
